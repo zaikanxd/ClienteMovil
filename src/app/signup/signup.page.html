@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" scroll-y="false">
+  <div class="the-form ion-padding-vertical">
+    <div class="input-item">
+      <ion-label>Username</ion-label>
+      <ion-item>
+        <ion-input type="text" placeholder="JohneDoe"></ion-input>
+      </ion-item>
+    </div>
+    <div class="input-item">
+      <ion-label>Email Address</ion-label>
+      <ion-item>
+        <ion-input type="email" placeholder="abc@def.com"></ion-input>
+      </ion-item>
+    </div>
+    <div class="input-item">
+      <ion-label>Password</ion-label>
+      <ion-item>
+        <ion-input type="password" placeholder="password"></ion-input>
+      </ion-item>
+    </div>
+ 
+
+    <div class="btn-holder ion-padding-vertical">
+      <ion-button (click)="goOTP()" expand="block" shape="round">
+       SIGNUP
+      </ion-button>
+    </div>
+  </div>
+  <div class="bootom-pic-holder ion-text-right">
+    <img src="https://i.ibb.co/HdWLkcF/signup.png" alt="" class="animate__animated animate__bounceInUp">
+  </div>
+</ion-content>

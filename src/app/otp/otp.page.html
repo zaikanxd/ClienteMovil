@@ -1,0 +1,60 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="signup" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Phone Verification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="instructions ion-text-center">
+    <p class="ion-text-wrap">
+      Enter 4 Digit code to get proceed
+    </p>
+  </div>
+  <div class="otp-holder">
+    <ion-grid>
+      <ion-row class="ion-align-items-center	ion-justify-content-center">
+        <ion-col size="3">
+          <div class="input-holder">
+            <ion-input type="tel" #otp1 class="otp" maxlength="1" (keyup)="next(otp2)" class="ion-text-center">
+            </ion-input>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="input-holder">
+            <ion-input type="tel" #otp2 class="otp" maxlength="1" size="1" (keyup)="next(otp3)" class="ion-text-center">
+            </ion-input>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="input-holder">
+            <ion-input type="tel" #otp3 class="otp" pattern="[0-9]" maxlength="1" size="1" (keyup)="next(otp4)"
+              class="ion-text-center">
+            </ion-input>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="input-holder">
+            <ion-input type="tel" #otp4 class="otp" pattern="[0-9]" maxlength="1" size="1" size="1"
+              class="ion-text-center">
+            </ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="btn-holder ion-padding-vertical">
+    <ion-button (click)="goHome()" expand="block" shape="round">
+      VERIFY NUMBER
+    </ion-button>
+  </div>
+  <div class="bottom-field-holder ion-text-center">
+    <p>Didn’t you received a code ?<br><span>Rsend a new code</span></p>
+  </div>
+
+  <div class="bootom-pic-holder ion-text-right">
+    <img src="https://i.ibb.co/N9LVTpK/otp.png" alt=""  class="animate__animated animate__fadeInRight">
+  </div>
+</ion-content>

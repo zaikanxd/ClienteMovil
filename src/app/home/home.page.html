@@ -1,0 +1,378 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="assets/imgs/icn-menu.svg">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end" (click)="goSearch()">
+      <ion-button >
+        <ion-icon color="primary" slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" id="cart" (click)="goCart()">
+      <div class="badge-holder">
+        <ion-badge mode="ios" class="flex al-center jc-center">2</ion-badge>
+      </div>
+      <ion-button>
+        <ion-icon slot="icon-only" src="assets/imgs/icn-cart.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <div class="searchbar-holder">
+    <ion-searchbar mode="md" inputmode="search" placeholder="Search Product" [debounce]="250" showCancelButton="focus">
+    </ion-searchbar>
+  </div> -->
+
+  <div class="category-holder">
+    <div class="title-holder">
+      <h1> Menu</h1>
+    </div>
+    <div class="cat-holder animate__animated animate__backInUp">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center" (click)="goProducts()">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/vegetables.svg" alt="">
+              </div>
+              <h4>Credito</h4>
+              <p> mi Crédito</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/fruits.svg" alt="">
+              </div>
+              <h4>Solicitud</h4>
+              <p>mis solicitudes</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/meat.svg" alt="">
+              </div>
+              <h4>Pagar</h4>
+              <p>Subir mi pago</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/fish.svg" alt="">
+              </div>
+              <h4>Fish</h4>
+              <p>35 Products</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/snacks.svg" alt="">
+              </div>
+              <h4>Snacks</h4>
+              <p>35 Products</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/beverages.svg" alt="">
+              </div>
+              <h4>Beverages</h4>
+              <p>35 Products</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/bakery.svg" alt="">
+              </div>
+              <h4>Bakery</h4>
+              <p>35 Products</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="cat-card ion-text-center">
+              <div class="cat-img">
+                <img src="assets/imgs/categories/pcare.svg" alt="">
+              </div>
+              <h4>Personal care</h4>
+              <p>35 Products</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="sec-title">
+      <h4>New Arrivals</h4>
+      <p>SEE ALL</p>
+    </div>
+    <div class="slider-holder">
+      <ion-slides mode="ios" pager="false" scrollbar="false" [options]="slideOpts">
+        <ion-slide (click)="goProductDetail()">
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="12">
+                <div class="product-card">
+                  <div class="top-row">
+                    <div class="discount-holder">
+                      <p>10%</p>
+                    </div>
+                    <div class="fav-holder">
+                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="img-holder ion-text-center">
+                    <img src="assets/imgs/carrot.png" alt="">
+                  </div>
+                  <div class="details ion-text-left">
+                    <div class="category">
+                      <p>VEGETABLES</p>
+                    </div>
+                    <div class="name ">
+                      <h5>Organic Carrot</h5>
+                    </div>
+                    <div class="bottom">
+                      <div class="rating-holder ">
+                        <star-rating value="4" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#F5F5F5"
+                          size="22px" readonly="false"></star-rating>
+                      </div>
+                      <div class="price-holder">
+                        <p>$2.00 <span>(1kg)</span> </p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+        <ion-slide>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="12">
+                <div class="product-card">
+                  <div class="top-row">
+                   <!--  <div class="discount-holder">
+                      <p>10%</p>
+                    </div> -->
+                    <div class="fav-holder">
+                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="img-holder ion-text-center">
+                    <img src="assets/imgs/orange.PNG" alt="">
+                  </div>
+                  <div class="details ion-text-left">
+                    <div class="category">
+                      <p>FRUITS</p>
+                    </div>
+                    <div class="name ">
+                      <h5>Orange</h5>
+                    </div>
+                    <div class="bottom">
+                      <div class="rating-holder ">
+                        <star-rating value="4" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#F5F5F5"
+                          size="22px" readonly="false"></star-rating>
+                      </div>
+                      <div class="price-holder">
+                        <p>$3.00 <span>(1kg)</span> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+        <ion-slide>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="12">
+                <div class="product-card">
+                  <div class="top-row">
+                 
+                    <div class="fav-holder">
+                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="img-holder ion-text-center">
+                    <img src="assets/imgs/bun.PNG" alt="">
+                  </div>
+                  <div class="details ion-text-left">
+                    <div class="category">
+                      <p>BAKERY</p>
+                    </div>
+                    <div class="name ">
+                      <h5>Baked Bun</h5>
+                    </div>
+                    <div class="bottom">
+                      <div class="rating-holder ">
+                        <star-rating value="4" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#F5F5F5"
+                          size="22px" readonly="false"></star-rating>
+                      </div>
+                      <div class="price-holder">
+                        <p>$2.00 <span>(1)</span> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+  <div class="banner-holder ion-padding-vertical">
+    <div class="banner">
+      <ion-row>
+        <ion-col size="6" class="banner-content ion-text-center">
+          <p>40% oFF</p>
+          <h4>Fresh Milk</h4>
+        </ion-col>
+        <ion-col size="6" class="banner-img ion-text-left">
+          <img src="assets/imgs/fresh-milk.png" alt="">
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">
+      <h4>Popular Products</h4>
+      <p>SEE ALL</p>
+    </div>
+    <div class="slider-holder">
+      <ion-slides mode="ios" pager="false" scrollbar="false" [options]="slideOpts">
+        <ion-slide>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="12">
+                <div class="product-card">
+                  <div class="top-row">
+                    <div class="discount-holder">
+                      <p>10%</p>
+                    </div>
+                    <div class="fav-holder">
+                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="img-holder ion-text-center">
+                    <img src="assets/imgs/samon.PNG" alt="">
+                  </div>
+                  <div class="details ion-text-left">
+                    <div class="category">
+                      <p>FISH</p>
+                    </div>
+                    <div class="name ">
+                      <h5>Caned Salmon</h5>
+                    </div>
+                    <div class="bottom">
+                      <div class="rating-holder ">
+                        <star-rating value="4" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#F5F5F5"
+                          size="22px" readonly="false"></star-rating>
+                      </div>
+                      <div class="price-holder">
+                        <p>$5.00 <span>(1)</span> </p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+        <ion-slide>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="12">
+                <div class="product-card">
+                  <div class="top-row">
+                    <div class="discount-holder">
+                      <p>10%</p>
+                    </div>
+                    <div class="fav-holder">
+                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="img-holder ion-text-center">
+                    <img src="assets/imgs/carrot.png" alt="">
+                  </div>
+                  <div class="details ion-text-left">
+                    <div class="category">
+                      <p>VEGETABLES</p>
+                    </div>
+                    <div class="name ">
+                      <h5>Organic Carrot</h5>
+                    </div>
+                    <div class="bottom">
+                      <div class="rating-holder ">
+                        <star-rating value="4" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#F5F5F5"
+                          size="22px" readonly="false"></star-rating>
+                      </div>
+                      <div class="price-holder">
+                        <p>$2.00 <span>(1kg)</span> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+        <ion-slide>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="12">
+                <div class="product-card">
+                  <div class="top-row">
+                    <div class="discount-holder">
+                      <p>10%</p>
+                    </div>
+                    <div class="fav-holder">
+                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="img-holder ion-text-center">
+                    <img src="assets/imgs/onion.PNG" alt="">
+                  </div>
+                  <div class="details ion-text-left">
+                    <div class="category">
+                      <p>VEGETABLES</p>
+                    </div>
+                    <div class="name ">
+                      <h5>Onion</h5>
+                    </div>
+                    <div class="bottom">
+                      <div class="rating-holder ">
+                        <star-rating value="4" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#F5F5F5"
+                          size="22px" readonly="true"></star-rating>
+                      </div>
+                      <div class="price-holder">
+                        <p>$4.00 <span>(1kg)</span> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</ion-content>

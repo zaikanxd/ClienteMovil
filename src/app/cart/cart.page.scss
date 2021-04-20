@@ -1,0 +1,92 @@
+ion-toolbar
+{
+    --color: var(--ion-color-primary);
+}
+
+
+ion-content
+{
+    .cart-list
+    {
+        .item-card
+        {
+            box-shadow:3px 5px 43px rgba(0, 0, 0, 0.05);
+            margin: 1rem 0;
+            ion-col
+            {
+
+                img 
+                {
+                    height: 10vh;
+                }
+                h4
+                {
+                    color: #244574;
+                    font-family: 'MMedium';
+                    font-size: 1rem;
+                    margin: 0;
+                }
+
+                p
+                {
+                    color: var(--ion-color-primary);
+                    font-family: 'MRegular';
+                    margin: 0;
+                }
+                .btns-holder
+                {
+                    ion-button
+                    {
+                        --box-shadow: none;
+                        font-size: 0.6rem;
+                    }
+
+
+                    ion-note
+                    {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-footer
+{
+    background: white !important;
+    .coupon-holder
+    {
+        ion-label
+            {
+                color: #244574;
+                font-family: 'MBold';
+            }
+
+        #check-item
+        {
+            --padding-start: 0;
+            ion-checkbox{
+                margin-right: 10px;
+            }
+        }
+        .input-item
+        {
+
+            ion-item
+            {
+                --border-color: #DADDE3;
+                --border-radius:0.5rem;
+                --border-style: solid;
+                --border-width: 1px;
+                margin-top: 10px !important;
+
+
+                ion-input
+                {
+                    font-family: 'MLight';
+                }
+            }
+        }
+    }
+}
