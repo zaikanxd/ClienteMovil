@@ -22,13 +22,13 @@
     <div class="input-item">
       <ion-label>Documento</ion-label>
       <ion-item>
-        <ion-input type="number" placeholder="12345678"></ion-input>
+        <ion-input [(ngModel)]="cliente.documento" type="number" placeholder="12345678"></ion-input>
       </ion-item>
     </div>
     <div class="input-item">
       <ion-label>Contraseña</ion-label>
       <ion-item>
-        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-input [(ngModel)]="cliente.password" type="password" placeholder="Password"></ion-input>
       </ion-item>
     </div>
     <div class="rem-forget-holder">
@@ -52,6 +52,6 @@
     </div>
   </div>
   <div class="bottom-field-holder ion-text-center">
-    <p>¿Aún no eres cliente?&nbsp;<span (click)="goSignup()"></span></p>
+    <p (click)="goSignup()">¿Crear tu contrsaeña?</p>
   </div>
 </ion-content>

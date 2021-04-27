@@ -1,16 +1,18 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
-};
+  production: false,
+  // serviceUrl: "http://localhost:24893/webapiz2h/v1/",
+  serviceMovilUrl:"http://localhost:53297//v1/",
+  // serviceMovilUrl: "http://192.168.10.15:62787/v1/",
+  // serviceImageUrl: "http://192.168.1.15:3026/webapiz2h/v1/fileupload/"
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+  userDefault: "ADMIN",
+  versionAngular: "7.0.3",
+  versionAppWeb: "Ionic 5",
+  empresaID: 1,
+  pathDocumentos: './assets/images/',
+  // serviceUrl: "http://200.1.177.214:8080/itBankSeguridadApi/webapiz2h/v1/",
+  // serviceMovilUrl: "http://200.1.177.214:8080/DevitCreditosMovil/v1/",
+  // serviceImageUrl: "http://200.1.177.214:8080/itBankFileUploadApi/webapiz2h/v1/fileupload/"
+
+};
