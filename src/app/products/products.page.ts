@@ -1,6 +1,8 @@
 import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
@@ -11,11 +13,14 @@ export class ProductsPage implements OnInit {
   constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+
   }
 
-  goProductDetail()
-  {
-    this.navCtrl.navigateForward('productdetail');  
+  goProductDetail() {
+
+
   }
+
+
 
 }

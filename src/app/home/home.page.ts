@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
 
   goProducts()
   {
-    this.navCtrl.navigateForward('products');
+    this.navCtrl.navigateForward('orderdetails');
   }
 
 

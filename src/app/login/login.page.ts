@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cliente = new Cliente(0, '', '', '', '', '', 0, '', '', 0, '')
+    this.cliente = new Cliente(0, '', '', '', '', 0, '', '', '', '', 0)
   }
 
   Login() {

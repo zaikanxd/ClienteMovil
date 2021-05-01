@@ -9,6 +9,7 @@ import { ProductsPageRoutingModule } from './products-routing.module';
 import { ProductsPage } from './products.page';
 import { RatingModule } from 'ng-starrating';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +18,7 @@ import { RatingModule } from 'ng-starrating';
     RatingModule,
     ProductsPageRoutingModule
   ],
-  declarations: [ProductsPage]
+  declarations: [ProductsPage],
+
 })
 export class ProductsPageModule {}

@@ -16,7 +16,7 @@ export class SignupPage implements OnInit {
   constructor(private navCtrl: NavController, private movilService: MovilService,private uiService: UiServiceService) { }
 
   ngOnInit() {
-    this.cliente = new Cliente(0, '', '', '', '', '', 0, '', '', 0, '')
+    this.cliente = new Cliente(0, '', '', '', '', 0, '', '', '', '', 0)
   }
 
   goOTP() {

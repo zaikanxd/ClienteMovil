@@ -5,6 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cliente, ICliente } from '../models/cliente.model';
 import { DataService1 } from './data.service';
 import { environment } from '../../environments/environment';
+import { SessionStorageService } from '../session/session.service';
+import { Session } from '../models/session.model';
 
 
 
@@ -13,9 +15,13 @@ import { environment } from '../../environments/environment';
 })
 
 export class MovilService {
-    constructor(private dataService: DataService1) { }
+    session: Session = new Session(0, '', '', '', '', '', 0, '', '', 0, '');
+
+    constructor(private dataService: DataService1, private sessionService: SessionStorageService) { }
     validLoginUrl: string = 'cliente/obtener';
     insertarClaveUrl: string = 'cliente/insertar'
+    consultarCreditoUrl: string = 'credito/list'
+    private busquedaKardexCreitoUrl: string = 'kardex/kardexCalendario';
 
     public validateLogin(cliente: Cliente): any {
         let parameters = new HttpParams();
@@ -39,4 +45,20 @@ export class MovilService {
         return this.dataService.execPutJson(parameters);
 
     }
+
+    public consultarCredito() {
+        let parameters = new HttpParams();
+        parameters = parameters.append("documento", String(this.sessionService.session.documento));
+
+        this.dataService.set(this.consultarCreditoUrl);
+        return this.dataService.execGetJson(parameters);
+    }
+
+   public buscarKardexCredito(idCredito: number, ind: number): any {
+        let parameters = new HttpParams();
+        parameters = parameters.append("pIdCredito", String(idCredito));
+        parameters = parameters.append("pInd", String(ind));
+        this.dataService.set(this.busquedaKardexCreitoUrl);
+        return this.dataService.execGetJson(parameters);
+      }
 }

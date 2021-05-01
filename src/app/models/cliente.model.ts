@@ -8,7 +8,7 @@ export interface ICliente {
     tipoDocumentoID: number;
     documento: string;
     FotoRuta: string;
-    empresaID: number;
+    empresaID: number
     password: string
 }
 
@@ -19,12 +19,12 @@ export class Cliente implements ICliente {
         public apellidoPat: string,
         public apellidoMat: string,
         public nombreCompleto: string,
-        public tipoDocumentoName: string,
         public tipoDocumentoID: number,
+        public tipoDocumentoName: string,
         public documento: string,
         public FotoRuta: string,
-        public empresaID: number,
         public password: string,
+        public empresaID: number,
 
     ) {
         this.clienteID = clienteID;
@@ -32,11 +32,11 @@ export class Cliente implements ICliente {
         this.apellidoPat = apellidoPat;
         this.apellidoMat = apellidoMat;
         this.nombreCompleto = nombreCompleto;
-        this.tipoDocumentoName = tipoDocumentoName;
         this.tipoDocumentoID = tipoDocumentoID;
+        this.tipoDocumentoName = tipoDocumentoName;
         this.documento = documento;
         this.FotoRuta = FotoRuta;
-        this.empresaID = empresaID;
         this.password = password;
+        this.empresaID = empresaID
     }
 }
