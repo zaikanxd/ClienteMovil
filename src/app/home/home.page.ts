@@ -22,10 +22,13 @@ export class HomePage implements OnInit {
     this.navCtrl.navigateForward('orderdetails');
   }
 
+  goSolicitud(){
+    this.navCtrl.navigateForward('solicitudes');
+  }
 
-  goCart()
+  goPago()
   {
-    this.presentCartModal()
+    this.navCtrl.navigateForward('nuevo-pago');
   }
 
 

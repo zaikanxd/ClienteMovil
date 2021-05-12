@@ -19,12 +19,12 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Solicitud',
-      url: 'myorders',
+      url: 'solicitudes',
       icon: 'basket-outline'
     },
     {
       title: 'Crédito',
-      url: 'wishlist',
+      url: 'orderdetails',
       icon: 'egg-outline'
     },
     {

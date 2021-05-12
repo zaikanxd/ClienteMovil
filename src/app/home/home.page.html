@@ -10,7 +10,7 @@
         <ion-icon color="primary" slot="icon-only" name="search-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-buttons slot="end" id="cart" (click)="goCart()">
+    <ion-buttons slot="end" id="cart" (click)="goPago()">
       <div class="badge-holder">
         <ion-badge mode="ios" class="flex al-center jc-center">2</ion-badge>
       </div>
@@ -44,7 +44,7 @@
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="cat-card ion-text-center">
+            <div class="cat-card ion-text-center" (click)="goSolicitud()">
               <div class="cat-img">
                 <img src="assets/imgs/categories/fruits.svg" alt="">
               </div>
@@ -53,7 +53,7 @@
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="cat-card ion-text-center">
+            <div class="cat-card ion-text-center" (click)="goPago()">
               <div class="cat-img">
                 <img src="assets/imgs/categories/meat.svg" alt="">
               </div>

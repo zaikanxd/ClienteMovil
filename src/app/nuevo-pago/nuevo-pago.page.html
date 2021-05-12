@@ -1,0 +1,104 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <div class="status-holder ion-padding-bottom">
+    <div class="title">
+      <h5>Préstamo # <span>13466</span> </h5>
+    </div>
+  </div>
+  <form [formGroup]="formGroupNuevoPago" (ngSubmit)="formGroupNuevoPagoSubmit(formGroupNuevoPago)">
+    <div class="the-form ion-padding-vertical">
+      <div class="input-item">
+        <ion-label>Fecha Pago</ion-label>
+        <ion-item>
+          <ion-datetime formControlName="FechaPago" placeholder="Fecha Pago" [value]="fechaPago"
+            display-format="DD/MM/YYYY" [pickerOptions]="customPickerOptionsProceso"></ion-datetime>
+          <ng-container *ngIf="formGroupNuevoPago.get('Monto').hasError('required') 
+          && formGroupNuevoPago.get('FechaPago').touched">
+            <div class="error-message">
+              {{errorMensaje}}
+            </div>
+          </ng-container>
+        </ion-item>
+      </div>
+
+      <div class="input-item">
+        <ion-label>Nro Operación:</ion-label>
+        <ion-item>
+          <ion-input formControlName="nroOperacion" type="number" placeholder="56.00"></ion-input>
+          <ng-container *ngIf="formGroupNuevoPago.get('nroOperacion').hasError('required') 
+        && formGroupNuevoPago.get('nroOperacion').touched">
+            <div class="error-message">
+              {{errorMensaje}}
+            </div>
+          </ng-container>
+        </ion-item>
+      </div>
+
+      <div class="input-item">
+        <ion-label>Monto a Pagar:</ion-label>
+        <ion-item>
+          <ion-input formControlName="Monto" type="number" placeholder="56.00"></ion-input>
+          <ng-container *ngIf="formGroupNuevoPago.get('Monto').hasError('required') 
+        && formGroupNuevoPago.get('Monto').touched">
+            <div class="error-message">
+              {{errorMensaje}}
+            </div>
+          </ng-container>
+        </ion-item>
+      </div>
+
+      <div class="input-item">
+        <ion-label>Banco</ion-label>
+        <ion-item lines="none">
+          <ion-select value="1" multiple="false">
+            <ion-select-option value="0.5">BCP</ion-select-option>
+            <ion-select-option value="0.6">Continental bbva</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
+
+    <ion-row>
+      <ion-col size="6">
+        <div class="btn-holder ion-padding-vertical">
+          <ion-button type="submit"  expand="block" shape="round">
+            Camara
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="btn-holder ion-padding-vertical">
+          <ion-button type="submit"  expand="block" shape="round">
+            Galeria
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="image">
+      <ion-col size="12">
+        <ion-card>
+          <img [src]="tempImages">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <div class="input-item">
+      <div class="btn-holder ion-padding-vertical">
+        <ion-button type="submit"  expand="block" shape="round">
+          Enviar Pago
+        </ion-button>
+      </div>
+
+    </div>
+  </form>
+
+</ion-content>

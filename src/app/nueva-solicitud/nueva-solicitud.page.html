@@ -1,0 +1,94 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="solicitudes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva Solicitud</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="formGroupNuevaSolicitud" (ngSubmit)="formGroupNuevaSolicitudSubmit(formGroupNuevaSolicitud)">
+
+    <div class="the-form ion-padding-vertical">
+      <div class="input-item">
+        <ion-label>DNI</ion-label>
+        <ion-item>
+          <ion-input formControlName="DNI" type="number" placeholder="00000000"></ion-input>
+        </ion-item>
+      </div>
+      <div class="input-item">
+        <ion-label>Nombre</ion-label>
+        <ion-item>
+          <ion-input formControlName="Nombre" type="name" placeholder="Juan Perez"></ion-input>
+        </ion-item>
+      </div>
+      <div class="input-item">
+        <ion-label>Celular</ion-label>
+        <ion-item>
+          <ion-input formControlName="Celular" type="phone" placeholder="993645871"></ion-input>
+        </ion-item>
+      </div>
+      <div class="input-item">
+        <ion-label>Monto</ion-label>
+        <ion-item>
+          <ion-input formControlName="Monto" type="money" placeholder="1000"></ion-input>
+          <ng-container *ngIf="formGroupNuevaSolicitud.get('Monto').hasError('required') 
+        && formGroupNuevaSolicitud.get('Monto').touched">
+            <div class="error-message">
+              {{errorMensaje}}
+            </div>
+          </ng-container>
+        </ion-item>
+      </div>
+      <div class="input-item">
+        <ion-label>N° Cuotas</ion-label>
+        <ion-item>
+          <ion-input formControlName="Cuotas" type="number" placeholder="20"></ion-input>
+          <ng-container *ngIf="formGroupNuevaSolicitud.get('Monto').hasError('required') 
+        && formGroupNuevaSolicitud.get('Cuotas').touched">
+            <div class="error-message">
+              {{errorMensaje}}
+            </div>
+          </ng-container>
+        </ion-item>
+      </div>
+      <div class="input-item">
+        <ion-label>Cuota a Pagar</ion-label>
+        <ion-item>
+          <ion-input formControlName="nMontoCuota" type="number" placeholder="56.00"></ion-input>
+          <ng-container *ngIf="formGroupNuevaSolicitud.get('Monto').hasError('required') 
+        && formGroupNuevaSolicitud.get('nMontoCuota').touched">
+            <div class="error-message">
+              {{errorMensaje}}
+            </div>
+          </ng-container>
+        </ion-item>
+      </div>
+      <div class="input-item">
+        <ion-label>Fecha Desembolso</ion-label>
+        <ion-item>
+          <ion-datetime formControlName="FechaDesembolso" placeholder="Fecha Proceso" [value]="fechaDesembolso"
+            display-format="DD/MM/YYYY" [min]="minDate" 
+            [pickerOptions]="customPickerOptionsProceso"></ion-datetime>
+          <ng-container *ngIf="formGroupNuevaSolicitud.get('Monto').hasError('required') 
+          && formGroupNuevaSolicitud.get('FechaDesembolso').touched">
+            <div class="error-message">
+              {{errorMensaje}}
+            </div>
+          </ng-container>
+        </ion-item>
+
+        <div class="input-item">
+          <div class="btn-holder ion-padding-vertical">
+            <ion-button type="submit"  expand="block" shape="round">
+              Enviar Solicitud
+            </ion-button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </form>
+</ion-content>

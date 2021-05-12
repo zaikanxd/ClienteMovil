@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   Login() {
     this.movilService.validateLogin(this.cliente).subscribe(res => {
       this.session = res;
-      debugger;
+
        if(this.session.apellidoPat){
         this.sessionService.setAudit(this.session);
         this.navCtrl.navigateForward('home');

@@ -94,7 +94,20 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'solicitudes',
+    loadChildren: () => import('./solicitudes/solicitudes.module').then( m => m.SolicitudesPageModule)
+  },  {
+    path: 'nueva-solicitud',
+    loadChildren: () => import('./nueva-solicitud/nueva-solicitud.module').then( m => m.NuevaSolicitudPageModule)
+  },
+  {
+    path: 'nuevo-pago',
+    loadChildren: () => import('./nuevo-pago/nuevo-pago.module').then( m => m.NuevoPagoPageModule)
   }
+
+
 ];
 
 @NgModule({

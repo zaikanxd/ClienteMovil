@@ -21,7 +21,6 @@ export class SignupPage implements OnInit {
 
   goOTP() {
     this.movilService.insertarClave(this.cliente).subscribe(res => {
-      debugger;
       if (res == 200) {
         this.navCtrl.navigateForward('login');
        }else{

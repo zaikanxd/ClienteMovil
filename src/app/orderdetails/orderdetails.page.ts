@@ -47,9 +47,7 @@ export class OrderdetailsPage implements OnInit {
   }
   private consultarKardex(idCredito: number, ind: number) {
     this.movilService.buscarKardexCredito(idCredito, ind).subscribe(res => {
-      debugger;
       this.kardexs = res;
-
     },
       error => {
         // this.uiService.presentToast('Hubo un error al listar resumen.');
